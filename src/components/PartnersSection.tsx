@@ -6,45 +6,30 @@ const PartnersSection = () => {
     { name: "Aquvie", color: "from-green-500 to-green-600", logo: "/logos/Aquvie.png" },
     { name: "Capitan", color: "from-blue-500 to-blue-600", logo: "/logos/Capitan.png" },
     { name: "Fly-540", color: "from-red-500 to-red-600", logo: "/logos/Fly-540.png" },
-    { name: "Nice & Lovely", color: "from-orange-500 to-orange-600", logo: "/logos/Nice-Lovely.png" },
+    { name: "Nice Ones Ltd", color: "from-orange-500 to-orange-600", logo: "/logos/Nice.png" },
     { name: "Ola Energy", color: "from-purple-500 to-purple-600", logo: "/logos/Ola-Energy.png" },
     { name: "Naivas", color: "from-cyan-500 to-cyan-600", logo: "/logos/naivas.png" },
-    { name: "KFC Kenya", color: "from-red-600 to-red-700", logo: "/logos/kfc.png" },
+    { name: "KFC Kenya", color: "from-yellow-400 to-yellow-500", logo: "/logos/kfc-logo.png" },
     { name: "Safarilink", color: "from-indigo-500 to-indigo-600", logo: "/logos/Safarilink.png" },
     { name: "Total Energies", color: "from-red-400 to-red-500", logo: "/logos/Total-energies.png" },
     { name: "Trade Winds", color: "from-blue-400 to-blue-500", logo: "/logos/Tradewinds.png" },
   ];
 
   const [currentCubeIndex, setCurrentCubeIndex] = React.useState(0);
-  const partnersPerCube = 4;
 
-  // Cube animation
+  // Rotate cube and update logo after full rotation
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCubeIndex((prev) => (prev + 1) % partners.length);
+    }, 6000); // matches cube rotation duration
+    return () => clearInterval(interval);
+  }, [partners.length]);
+
   const cubeVariants = {
     animate: {
       rotateY: [0, 360],
       transition: {
-        duration: 6, // one full rotation
-        repeat: Infinity,
-        ease: "linear",
-      },
-    },
-  };
-
-  // Update cube faces only after full rotation
-  const handleUpdate = (latest: any) => {
-    if (Math.round(latest.rotateY) % 360 === 0) {
-      setCurrentCubeIndex(
-        (prev) => (prev + partnersPerCube) % partners.length
-      );
-    }
-  };
-
-  // Sliding logos marquee
-  const slideVariants = {
-    animate: {
-      x: ["-100%", "100vw"],
-      transition: {
-        duration: 15,
+        duration: 6,
         repeat: Infinity,
         ease: "linear",
       },
@@ -54,8 +39,7 @@ const PartnersSection = () => {
   return (
     <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,11 +61,10 @@ const PartnersSection = () => {
               variants={cubeVariants}
               animate="animate"
               className="relative w-full h-full transform-style-preserve-3d"
-              onUpdate={handleUpdate}
             >
-              {partners
-                .slice(currentCubeIndex, currentCubeIndex + partnersPerCube)
-                .map((partner, index) => (
+              {[0, 1, 2, 3].map((index) => {
+                const partner = partners[(currentCubeIndex + index) % partners.length];
+                return (
                   <div
                     key={index}
                     className="absolute w-full h-full bg-white rounded-lg shadow-lg flex items-center justify-center border-2 border-gray-200"
@@ -104,22 +87,23 @@ const PartnersSection = () => {
                       </p>
                     </div>
                   </div>
-                ))}
+                );
+              })}
             </motion.div>
           </div>
         </div>
 
-        {/* Sliding Partners */}
-        <div className="relative h-24 overflow-hidden">
+        {/* Sliding Partners - Left to Right Belt */}
+        <div className="relative h-28 overflow-hidden">
           <motion.div
-            variants={slideVariants}
-            animate="animate"
-            className="flex items-center space-x-16 absolute whitespace-nowrap"
+            animate={{ x: ["-100%", "0%"] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="flex items-center space-x-16 absolute left-0"
           >
             {[...partners, ...partners].map((partner, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 className="flex-shrink-0 bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="flex items-center space-x-4">
