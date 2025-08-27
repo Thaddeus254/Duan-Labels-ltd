@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 const Portfolio = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'labels', name: 'Labels' },
-    { id: 'stickers', name: 'Stickers' },
-    { id: 'banners', name: 'Banners' },
-    { id: 'branding', name: 'Branding' }
+    { id: "all", name: "All Projects" },
+    { id: "labels", name: "Labels" },
+    { id: "stickers", name: "Stickers" },
+    { id: "banners", name: "Banners" },
+    { id: "branding", name: "Branding" },
   ];
 
   const projects = [
@@ -17,49 +17,56 @@ const Portfolio = () => {
       id: 1,
       title: "Premium Wine Labels",
       category: "labels",
-      image: "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Elegant wine labels with gold foil finishing"
+      image:
+        "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Elegant wine labels with gold foil finishing",
     },
     {
       id: 2,
       title: "Corporate Branding",
       category: "branding",
-      image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Complete corporate identity package"
+      image:
+        "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Complete corporate identity package",
     },
     {
       id: 3,
       title: "Product Stickers",
       category: "stickers",
-      image: "https://images.pexels.com/photos/4226721/pexels-photo-4226721.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Waterproof product stickers for outdoor use"
+      image:
+        "https://images.pexels.com/photos/4226721/pexels-photo-4226721.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Waterproof product stickers for outdoor use",
     },
     {
       id: 4,
       title: "Event Banners",
       category: "banners",
-      image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Large format banners for corporate events"
+      image:
+        "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Large format banners for corporate events",
     },
     {
       id: 5,
       title: "Food Labels",
       category: "labels",
-      image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "FDA compliant food packaging labels"
+      image:
+        "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "FDA compliant food packaging labels",
     },
     {
       id: 6,
       title: "Promotional Stickers",
       category: "stickers",
-      image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Custom promotional stickers for campaigns"
-    }
+      image:
+        "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Custom promotional stickers for campaigns",
+    },
   ];
 
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects =
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
@@ -69,7 +76,8 @@ const Portfolio = () => {
             Our <span className="text-blue-600">Portfolio</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Discover our exceptional work and see how we've helped businesses enhance their brand presence
+            Discover our exceptional work and see how we've helped businesses
+            enhance their brand presence
           </p>
 
           {/* Category Filter */}
@@ -80,8 +88,8 @@ const Portfolio = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                    ? "bg-blue-600 text-white shadow-lg"
+                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                 }`}
               >
                 {category.name}
@@ -113,7 +121,9 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-gray-600">{project.description}</p>
               </div>
             </div>
