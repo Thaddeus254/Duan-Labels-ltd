@@ -25,52 +25,94 @@ const Products = () => {
     },
     {
       id: 2,
-      title: "Food Labels",
-      category: "labels",
-      image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Waterproof labels made of premium materials, designed to endure kitchen conditions."
+      title: "Plain Stickers",
+      category: "Stickers",
+      image: "/Gallery/plain-stickers.jpg",
+      description: "Versatile plain stickers suitable for labeling, packaging, and promotional use."
     },
     {
       id: 3,
       title: "UCR KEBS Labels",
       category: "labels",
-      image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/Kebs-Duan.png",
       description: "Compliance stickers customizable with compliance details for manufacturers."
     },
     {
       id: 4,
       title: "Boarding & Luggage Tags",
       category: "tags",
-      image: "/assets/Luggage-Tag.jpg",
+      image: "/Gallery/Luggage-Tag.jpg",
       description: "Customizable tags with names & eye-catching artwork, built to survive travel rigors."
     },
     {
       id: 5,
       title: "Alcohol & Wine Labels",
       category: "labels",
-      image: "https://images.pexels.com/photos/4226721/pexels-photo-4226721.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/wine-labels.jpg",
       description: "Premium labels for wineries and breweries, emphasizing quality and originality."
     },
     {
       id: 6,
       title: "Price Tag Labels",
       category: "stickers",
-      image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/price-tag.jpg",
       description: "Customizable price tags in various sizes and designs for retail establishments."
     },
     {
       id: 7,
       title: "Parking Tickets",
       category: "tags",
-      image: "https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/Parking-tickets-1.jpg",
       description: "Customizable parking tickets with vivid patterns, logos, and serial numbers."
     },
     {
       id: 8,
       title: "Custom Labels",
       category: "labels",
-      image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/Food-labels.jpg",
       description: "Labels that provide important information and enhance product appearance."
+    },
+    {
+      id: 9,
+      title: "Kebs Stickers",
+      category: "stickers",
+      image: "/Gallery/kebs-logo.png",
+      description: "Durable stickers that meet KEBS standards, ideal for product compliance."
+    },
+    {
+      id: 10,
+      title: "Boarding Pass",
+      category: "tag",
+      image: "/Gallery/Boarding-pass.jpg",
+      description: "Custom boarding passes for airlines and travel agencies, designed for easy handling."
+    },
+    {
+      id: 11,
+      title: "Products Stickers",
+      category: "stickers",
+      image: "/Gallery/cosmetic-sticker.jpeg",
+      description: "Vibrant stickers for product, enhancing brand visibility and appeal."
+    },
+    {
+      id: 12,
+      title: "Plain Thermal Rolls",
+      category: "thermal",
+      image: "/Gallery/thermal roll plain.png",
+      description: "High-quality plain thermal rolls for various printing needs, ensuring clear and sharp prints."
+    },
+    {
+      id: 13,
+      title: "Thermal Sticker Printed",
+      category: "sticker",
+      image: "/Gallery/Thermal Roll sticker Printed.png",
+      description: "Custom printed thermal stickers for branding and product information."
+    },
+    {
+      id: 14,
+      title: "Thermal Sticker Plain",
+      category: "sticker",
+      image: "/Gallery/thermal stickers plain.png",
+      description: "Durable and customizable tags for various applications, including retail and events."
     }
   ];
 

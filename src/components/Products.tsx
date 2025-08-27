@@ -8,7 +8,7 @@ const Portfolio = () => {
     { id: "all", name: "All Projects" },
     { id: "labels", name: "Labels" },
     { id: "stickers", name: "Stickers" },
-    { id: "banners", name: "Banners" },
+    { id: "Tags", name: "Tags" },
     { id: "branding", name: "Branding" },
   ];
 
@@ -17,8 +17,7 @@ const Portfolio = () => {
       id: 1,
       title: "Premium Wine Labels",
       category: "labels",
-      image:
-        "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/Gallery/wine-labels.jpg",
       description: "Elegant wine labels with gold foil finishing",
     },
     {

@@ -42,7 +42,7 @@ const About = () => {
                 About <span className="text-blue-600">Duan Labels</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Your trusted partner in premium printing and labeling solutions
+                Duan Labels Ltd is your one-stop source in Nairobi for thermal rolls, stickers, parking tickets, and labels, delivering quality, affordability, and reliability for every business.
               </p>
             </motion.div>
 
@@ -55,13 +55,12 @@ const About = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   Our <span className="text-red-600">Story</span>
                 </h2>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Thermal rolls, labels, and stickers are widely accessible in Kenya. These products are frequently used for printing barcodes, product information, shipping labels, and receipts, among other things.
+                <p className="text-l text-gray-600 mb-8 leading-relaxed">
+                  Duan Labels Ltd was founded with a simple vision: to be Nairobi’s one-stop solution for all labeling and printing needs. From stickers and thermal rolls to parking tickets and custom labels, we have grown into a trusted brand known for reliability, precision, and cost-effective solutions.
                 </p>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  Receipt printers frequently employ thermal rolls, and labels and stickers are used in retail, logistics, and other sectors that need reliable and easily adjustable identifying solutions.
+                  Over the years, we’ve built strong relationships with businesses both small and large, offering not just products, but tailored branding and identification solutions that make everyday operations seamless. Our thermal rolls power receipt printers, while our stickers and labels carry barcodes, product details, and shipping information across retail, logistics, and countless other industries.
                 </p>
-                
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {features.map((feature, index) => (
                     <motion.div
@@ -93,8 +92,7 @@ const About = () => {
                 <div className="relative z-10">
                   <motion.img
                     whileHover={{ scale: 1.02 }}
-                    src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Printing Process"
+                    src="/Gallery/about 1.jpg"
                     className="rounded-2xl shadow-2xl transition-transform duration-300"
                   />
                 </div>

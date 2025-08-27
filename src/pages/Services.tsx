@@ -1,46 +1,83 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Tag, Package, Printer, Palette, Clock, Shield } from 'lucide-react';
-import PageTransition from '../components/PageTransition';
+import React from "react";
+import { motion } from "framer-motion";
+import { Tag, Package, Printer, Palette, Clock, Shield } from "lucide-react";
+import PageTransition from "../components/PageTransition";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
       icon: <Tag className="h-12 w-12" />,
       title: "Custom Labels",
-      description: "High-quality custom labels for products, packaging, and branding with various materials and finishes.",
-      features: ["Waterproof options", "Various sizes", "Premium materials", "Quick turnaround"]
+      description:
+        "High-quality custom labels for products, packaging, and branding with various materials and finishes.",
+      features: [
+        "Waterproof options",
+        "Various sizes",
+        "Premium materials",
+        "Quick turnaround",
+      ],
     },
     {
       icon: <Package className="h-12 w-12" />,
       title: "Product Stickers",
-      description: "Durable product stickers and decals perfect for marketing, branding, and promotional campaigns.",
-      features: ["Weather resistant", "Custom shapes", "Bulk orders", "Competitive pricing"]
+      description:
+        "Durable product stickers and decals perfect for marketing, branding, and promotional campaigns.",
+      features: [
+        "Weather resistant",
+        "Custom shapes",
+        "Bulk orders",
+        "Competitive pricing",
+      ],
     },
     {
       icon: <Printer className="h-12 w-12" />,
-      title: "Digital Printing",
-      description: "State-of-the-art digital printing services for banners, posters, and large format materials.",
-      features: ["High resolution", "Fast delivery", "Large format", "Color accuracy"]
+      title: "Printing Excellence",
+      description:
+        "Advanced thermal roll, sticker, and label printing powered by modern machines and digital printers, ensuring precision and consistency in every batch.",
+      features: [
+        "Thermal roll printing",
+        "Custom labels & stickers",
+        "High-speed digital output",
+        "Consistent quality",
+      ],
     },
     {
       icon: <Palette className="h-12 w-12" />,
       title: "Design Services",
-      description: "Professional graphic design services to create stunning visuals that represent your brand.",
-      features: ["Logo design", "Brand identity", "Creative concepts", "Unlimited revisions"]
+      description:
+        "Professional graphic design services to create stunning visuals that represent your brand.",
+      features: [
+        "Logo design",
+        "Brand identity",
+        "Creative concepts",
+        "Unlimited revisions",
+      ],
     },
     {
       icon: <Clock className="h-12 w-12" />,
       title: "Express Service",
-      description: "Rush orders and express delivery options for urgent projects and tight deadlines.",
-      features: ["Same day service", "Priority handling", "Express shipping", "24/7 support"]
+      description:
+        "Rush orders and express delivery options for urgent projects and tight deadlines.",
+      features: [
+        "Same day service",
+        "Priority handling",
+        "Express shipping",
+        "24/7 support",
+      ],
     },
     {
       icon: <Shield className="h-12 w-12" />,
       title: "Quality Guarantee",
-      description: "100% satisfaction guarantee with premium materials and rigorous quality control processes.",
-      features: ["Money back guarantee", "Quality testing", "Premium materials", "Expert craftsmanship"]
-    }
+      description:
+        "100% satisfaction guarantee with premium materials and rigorous quality control processes.",
+      features: [
+        "Money back guarantee",
+        "Quality testing",
+        "Premium materials",
+        "Expert craftsmanship",
+      ],
+    },
   ];
 
   return (
@@ -58,7 +95,8 @@ const Services = () => {
                 Our <span className="text-blue-600">Services</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive printing and labeling solutions tailored to meet your business needs
+                Comprehensive printing and labeling solutions tailored to meet
+                your business needs
               </p>
             </motion.div>
 
@@ -78,16 +116,23 @@ const Services = () => {
                   >
                     {service.icon}
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <motion.li
                         key={featureIndex}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: (index * 0.1) + (featureIndex * 0.05) }}
+                        transition={{
+                          duration: 0.3,
+                          delay: index * 0.1 + featureIndex * 0.05,
+                        }}
                         className="flex items-center text-gray-700"
                       >
                         <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
@@ -96,13 +141,15 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white py-3 px-6 rounded-full font-semibold transition-all duration-300"
-                  >
-                    Learn More
-                  </motion.button>
+<Link to="/Contact">
+  <motion.button
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white py-3 px-6 rounded-full font-semibold transition-all duration-300"
+  >
+    Learn More
+  </motion.button>
+</Link>
                 </motion.div>
               ))}
             </div>

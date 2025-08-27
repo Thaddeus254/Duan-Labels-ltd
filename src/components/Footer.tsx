@@ -93,7 +93,8 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors" onClick={handlePhoneClick}>
                 <Phone className="h-5 w-5 text-red-400" />
-                <span className="text-gray-300 hover:text-white">+254 700 123 456</span>
+                <span className="text-gray-300 hover:text-white">+254 796 586 862<br />+254 792 561787<br />+254 723 296 716
+                </span>
               </div>
               <div className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors" onClick={handleEmailClick}>
                 <Mail className="h-5 w-5 text-red-400" />
@@ -101,7 +102,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-red-400" />
-                <span className="text-gray-300">Nairobi, Kenya</span>
+                <span className="text-gray-300">Preston Business Park, Kiungani Road</span>
               </div>
             </div>
             
@@ -110,7 +111,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-3">Find Us</h4>
               <div className="w-full h-48 bg-gray-800 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19034296034!2d36.70730744999999!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890123"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.682000395979!2d36.92105277408127!3d-1.3674822357183845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0d28d0677853%3A0x611cef8f3e61ad87!2sDuan%20Labels%20LTD!5e0!3m2!1sen!2ske!4v1756287748445!5m2!1sen!2ske"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -127,6 +128,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2025 Duan Labels. All rights reserved.
+            </p>
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              Designed & Published by: NexaCraft.co.ke
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</Link>
