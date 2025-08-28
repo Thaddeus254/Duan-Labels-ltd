@@ -1,15 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+254700123456';
+    window.location.href = "tel:+254700123456";
   };
 
   const handleEmailClick = () => {
-    window.location.href = 'mailto:info@duanlabels.co.ke';
+    window.location.href = "mailto:info@duanlabels.co.ke";
   };
 
   return (
@@ -23,24 +31,25 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center space-x-2 mb-6">
-              <img 
-                src="/src/assets/duan logo 1.png" 
-                alt="Duan Labels" 
+              <img
+                src="/src/assets/duan logo 1.png"
+                alt="Duan Labels"
                 className="h-8 w-auto"
-                onError={(e) => e.currentTarget.style.display = 'none'}
+                onError={(e) => (e.currentTarget.style.display = "none")}
               />
               <span className="text-2xl font-bold">Duan Labels</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Leading provider of thermal labels, stickers, and printing solutions in Kenya. 
-              We deliver quality products that meet the diverse needs of businesses across various industries.
+              Leading provider of thermal labels, stickers, and printing
+              solutions in Kenya. We deliver quality products that meet the
+              diverse needs of businesses across various industries.
             </p>
             <div className="flex space-x-4">
               {[
-                { Icon: Facebook, href: 'https://facebook.com/duanlabels' },
-                { Icon: Twitter, href: 'https://twitter.com/duanlabels' },
-                { Icon: Instagram, href: 'https://instagram.com/duanlabels' },
-                { Icon: Linkedin, href: 'https://linkedin.com/company/duanlabels' }
+                { Icon: Facebook, href: "https://facebook.com/duanlabels" },
+                { Icon: Twitter, href: "https://twitter.com/duanlabels" },
+                { Icon: Instagram, href: "https://instagram.com/duanlabels" },
+                { Icon: Linkedin, href: "https://linkedin.com/company/duanlabels" },
               ].map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
@@ -65,11 +74,11 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: 'Home', path: '/' },
-                { name: 'Services', path: '/services' },
-                { name: 'About', path: '/about' },
-                { name: 'Products', path: '/products' },
-                { name: 'Contact', path: '/contact' }
+                { name: "Home", path: "/" },
+                { name: "Services", path: "/services" },
+                { name: "About", path: "/about" },
+                { name: "Products", path: "/products" },
+                { name: "Contact", path: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -91,21 +100,36 @@ const Footer = () => {
           >
             <h3 className="text-xl font-bold mb-6">Contact Info</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors" onClick={handlePhoneClick}>
+              <div
+                className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors"
+                onClick={handlePhoneClick}
+              >
                 <Phone className="h-5 w-5 text-red-400" />
-                <span className="text-gray-300 hover:text-white">+254 796 586 862<br />+254 792 561787<br />+254 723 296 716
+                <span className="text-gray-300 hover:text-white">
+                  +254 796 586 862
+                  <br />
+                  +254 792 561787
+                  <br />
+                  +254 723 296 716
                 </span>
               </div>
-              <div className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors" onClick={handleEmailClick}>
+              <div
+                className="flex items-center space-x-3 cursor-pointer hover:text-red-400 transition-colors"
+                onClick={handleEmailClick}
+              >
                 <Mail className="h-5 w-5 text-red-400" />
-                <span className="text-gray-300 hover:text-white">info@duanlabels.co.ke</span>
+                <span className="text-gray-300 hover:text-white">
+                  info@duanlabels.co.ke
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-red-400" />
-                <span className="text-gray-300">Preston Business Park, Kiungani Road</span>
+                <span className="text-gray-300">
+                  Preston Business Park, Kiungani Road
+                </span>
               </div>
             </div>
-            
+
             {/* Embedded Map */}
             <div className="mt-6">
               <h4 className="text-lg font-semibold mb-3">Find Us</h4>
@@ -133,9 +157,24 @@ const Footer = () => {
               Designed & Published by: NexaCraft.co.ke
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</Link>
-              <Link to="/cookie-policy" className="text-gray-400 hover:text-white transition-colors duration-200">Cookie Policy</Link>
+              <Link
+                to="/privacy-policy"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-service"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                to="/cookie-policy"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                Cookie Policy
+              </Link>
             </div>
           </div>
         </div>

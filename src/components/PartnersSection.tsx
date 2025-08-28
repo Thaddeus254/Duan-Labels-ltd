@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const PartnersSection = () => {
   const partners = [
     { name: "Aquvie", color: "from-green-500 to-green-600", logo: "/logos/Aquvie.png" },
-    { name: "Capitan", color: "from-blue-500 to-blue-600", logo: "/logos/Capitan.png" },
-    { name: "Fly-540", color: "from-red-500 to-red-600", logo: "/logos/Fly-540.png" },
+    { name: "China Square", color: "from-blue-500 to-blue-600", logo: "/logos/china square.png" },
+    { name: "CentroFood", color: "from-red-500 to-red-600", logo: "/logos/cfi.png" },
     { name: "Nice Ones Ltd", color: "from-orange-500 to-orange-600", logo: "/logos/Nice.png" },
     { name: "Ola Energy", color: "from-purple-500 to-purple-600", logo: "/logos/Ola-Energy.png" },
     { name: "Naivas", color: "from-cyan-500 to-cyan-600", logo: "/logos/naivas.png" },
@@ -13,6 +13,7 @@ const PartnersSection = () => {
     { name: "Safarilink", color: "from-indigo-500 to-indigo-600", logo: "/logos/Safarilink.png" },
     { name: "Total Energies", color: "from-red-400 to-red-500", logo: "/logos/Total-energies.png" },
     { name: "Trade Winds", color: "from-blue-400 to-blue-500", logo: "/logos/Tradewinds.png" },
+    { name: "Sayen Hyper Store", color: "from-green-400 to-green-500", logo: "/logos/sayen.png" },
   ];
 
   const [currentCubeIndex, setCurrentCubeIndex] = React.useState(0);
