@@ -42,7 +42,10 @@ const Contact = () => {
 
     const whatsappNumber = "254796586862"; // ✅ updated to your real WhatsApp number
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${body}`;
-    const mailtoURL = `mailto:info@duanlabels.co.ke?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=info@duanlabels.co.ke&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+window.open(gmailURL, "_blank");
+
 
     if (isMobile) {
       const newWindow = window.open(whatsappURL, "_blank");

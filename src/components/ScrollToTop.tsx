@@ -20,7 +20,7 @@ const ScrollToTop = () => {
                    hover:bg-[#20b858] transition-all duration-300 animate-bounce 
                    ring-4 ring-[#25D366]/40 hover:ring-[#25D366]/60"
       >
-        <FaWhatsapp className="w-7 h-7 drop-shadow-md" />
+        <FaWhatsapp className="w-5 h-5 drop-shadow-md" />
       </a>
     </>
   );
