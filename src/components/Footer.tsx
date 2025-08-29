@@ -9,6 +9,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -50,6 +51,7 @@ const Footer = () => {
                 { Icon: Twitter, href: "https://twitter.com/duanlabels" },
                 { Icon: Instagram, href: "https://instagram.com/duanlabels" },
                 { Icon: Linkedin, href: "https://linkedin.com/company/duanlabels" },
+                { Icon: FaWhatsapp, href: "https://wa.me/254796586862" },
               ].map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
@@ -59,7 +61,12 @@ const Footer = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="bg-gray-800 hover:bg-red-600 p-2 rounded-full transition-colors duration-300"
                 >
-                  <Icon className="h-5 w-5" />
+                  {/* Use size prop for react-icons, className for lucide-react */}
+                  {Icon === FaWhatsapp ? (
+                    <FaWhatsapp size={20} />
+                  ) : (
+                    <Icon className="h-5 w-5" />
+                  )}
                 </motion.a>
               ))}
             </div>
