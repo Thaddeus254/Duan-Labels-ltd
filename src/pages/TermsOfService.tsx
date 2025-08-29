@@ -77,7 +77,7 @@ const TermsOfService = () => {
                     <p className="text-gray-700">
                       For questions about these Terms of Service, contact us at:<br/>
                       Email: info@duanlabels.co.ke<br/>
-                      Phone: +254 700 123 456<br/>
+                      Phone: +254 796 586 862<br />+254 792 561787<br />+254 723 296 716<br/>
                       Address: Nairobi, Kenya
                     </p>
                   </div>

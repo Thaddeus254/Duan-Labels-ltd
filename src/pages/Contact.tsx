@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
@@ -16,6 +16,12 @@ const Contact = () => {
     message: productParam ? `I'm interested in learning more about ${productParam}. Please provide more details about pricing, customization options, and delivery times.` : ''
   });
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -26,16 +32,32 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create email content
     const subject = `Inquiry from ${formData.name} - ${formData.service || 'General Inquiry'}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`;
-    
-    // Open email client
-    window.location.href = `mailto:info@duanlabels.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const body = `Hello Duan Labels Ltd,%0A%0A`
+      + `My name is ${formData.name}.%0A`
+      + `Email: ${formData.email}%0A`
+      + `Phone: ${formData.phone}%0A`
+      + `Service: ${formData.service || 'N/A'}%0A%0A`
+      + `Message:%0A${formData.message}`;
+
+    const whatsappNumber = "254796586862"; // ✅ updated to your real WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${body}`;
+    const mailtoURL = `mailto:info@duanlabels.co.ke?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    if (isMobile) {
+      const newWindow = window.open(whatsappURL, "_blank");
+      setTimeout(() => {
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+          window.location.href = mailtoURL;
+        }
+      }, 2000);
+    } else {
+      window.location.href = mailtoURL;
+    }
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+254700123456';
+    window.location.href = 'tel:+254796586862';
   };
 
   const handleEmailClick = () => {
@@ -75,7 +97,7 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   {[
-                    { icon: Phone, title: 'Phone', info: '+254 700 123 456', onClick: handlePhoneClick },
+                    { icon: Phone, title: 'Phone', info: '+254 796 586 862, +254 792 561787, +254 723 296 716', onClick: handlePhoneClick },
                     { icon: Mail, title: 'Email', info: 'info@duanlabels.co.ke', onClick: handleEmailClick },
                     { icon: MapPin, title: 'Location', info: 'Nairobi, Kenya' },
                     { icon: Clock, title: 'Business Hours', info: 'Mon - Fri: 8:00 AM - 6:00 PM' }
@@ -131,11 +153,7 @@ const Contact = () => {
               >
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.6 }}
-                    >
+                    <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Full Name *
                       </label>
@@ -149,13 +167,9 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
                         placeholder="Your full name"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.7 }}
-                    >
+                    <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email Address *
                       </label>
@@ -169,15 +183,11 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
                         placeholder="your.email@example.com"
                       />
-                    </motion.div>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
-                    >
+                    <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                         Phone Number
                       </label>
@@ -190,13 +200,9 @@ const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
                         placeholder="+254 700 000 000"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.9 }}
-                    >
+                    <div>
                       <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
                         Service Needed
                       </label>
@@ -219,14 +225,10 @@ const Contact = () => {
                         <option value="cleaning-labels">Cleaning Labels</option>
                         <option value="other">Other</option>
                       </select>
-                    </motion.div>
+                    </div>
                   </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                  >
+                  <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Project Details *
                     </label>
@@ -240,7 +242,7 @@ const Contact = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
                       placeholder="Tell us about your project requirements..."
                     />
-                  </motion.div>
+                  </div>
 
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
@@ -251,7 +253,7 @@ const Contact = () => {
                     type="submit"
                     className="w-full bg-gradient-to-r from-red-600 to-cyan-600 hover:from-red-700 hover:to-cyan-700 text-white py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl"
                   >
-                    Send Message
+                    {isMobile ? "Send via WhatsApp" : "Send via Email"}
                     <Send className="ml-2 h-5 w-5" />
                   </motion.button>
                 </form>
